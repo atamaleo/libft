@@ -6,7 +6,7 @@
 /*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:59:38 by viniferr          #+#    #+#             */
-/*   Updated: 2023/10/26 17:32:11 by viniferr         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:33:32 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,4 @@ char	*ft_strdup(const char *s)
 	}
 	s2[i] = '\0';
 	return (s2);
-}
-
-// C program to demonstrate strdup()
-#include<stdio.h>
-#include<string.h>
-
-int main()
-{
-    char source[] = "GeeksForGeeks";
-
-    // A copy of source is created dynamically
-    // and pointer to copy is returned.
-    char* target = ft_strdup(source);
-
-    printf("%s", target);
-    return 0;
 }
