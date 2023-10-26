@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viniferr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 14:16:39 by viniferr          #+#    #+#             */
-/*   Updated: 2023/10/25 14:17:00 by viniferr         ###   ########.fr       */
+/*   Created: 2023/10/26 14:51:47 by viniferr          #+#    #+#             */
+/*   Updated: 2023/10/26 16:04:41 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	*ft_calloc(size_t num, size_t size)
+{
 
+}

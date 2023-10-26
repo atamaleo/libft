@@ -18,5 +18,5 @@ int	ft_isprint(int c)
 		return (0);
 	else
 
-		return (c);
+		return (1);
 }

@@ -18,5 +18,5 @@ int	ft_isalnum(int c)
 			|| (c >= '0' && c <= '9')))
 		return (0);
 	else
-		return (c);
+		return (1);
 }

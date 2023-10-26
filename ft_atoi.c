@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viniferr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:14:31 by viniferr          #+#    #+#             */
-/*   Updated: 2023/10/25 16:27:47 by viniferr         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:44:03 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,4 @@ int	ft_atoi(const char *s)
 		i++;
 	}
 	return (res * sign);
-}
-#include <stdio.h>
-int main(void)
-{
-	char *c = "    -1235asbc";
-
-	
-	printf("%d",ft_atoi(c));
 }
