@@ -6,7 +6,7 @@
 #    By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 18:36:01 by viniferr          #+#    #+#              #
-#    Updated: 2023/11/01 18:49:13 by viniferr         ###   ########.fr        #
+#    Updated: 2023/11/01 19:02:20 by viniferr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS =	ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_putstr_fd.c \
-		ft_split.c \
 		ft_strchr.c \
 		ft_strdup.c \
 		ft_striteri.c \
@@ -48,7 +47,7 @@ SRCS =	ft_atoi.c \
 		ft_toupper.c \
 
 FLAGS =	-Wall -Wextra -Werror
-CC =	cc
+CC =	gcc
 OBJ =	$(SRCS:.c=.o)
 
 all:	$(NAME)
