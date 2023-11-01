@@ -6,18 +6,18 @@
 /*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:13:39 by viniferr          #+#    #+#             */
-/*   Updated: 2023/10/27 13:12:28 by viniferr         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:29:50 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
 	i = 0;
-	if(!s || !f)
+	if (!s || !f)
 		return ;
 	while (s[i])
 	{
