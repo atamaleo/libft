@@ -6,7 +6,7 @@
 /*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:11:31 by viniferr          #+#    #+#             */
-/*   Updated: 2023/11/01 13:28:41 by viniferr         ###   ########.fr       */
+/*   Updated: 2023/11/01 20:14:15 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trim;
 
+	trim = 0;
 	if (s1 != 0 && set != 0)
 	{
 		start = 0;

@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 10:14:37 by viniferr          #+#    #+#             */
-/*   Updated: 2023/11/01 20:47:57 by viniferr         ###   ########.fr       */
+/*   Created: 2023/11/01 20:51:08 by viniferr          #+#    #+#             */
+/*   Updated: 2023/11/01 21:26:19 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+static int	splitter_count(char *s, char c)
 {
-	unsigned int	i;
-	char			*str;
+	int	i;
+	int	j;
 
-	str = (char *)malloc(ft_strlen(s) + 1);
-	if (!str)
-		return (0);
-	if (!s || !f)
-		return (0);
 	i = 0;
+	j = 0;
 	while (s[i])
 	{
-		str[i] = f(i, s[i]);
+		if(s[i] == c)
+			j++;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (j);
+}
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		count;
+	char	**arr;
+
+
+	i = 0;
+	count = splitter_count(s, c);
+	arr = (char **)malloc(sizeof(char **) * ft_strlen(s) - count);
+
 }

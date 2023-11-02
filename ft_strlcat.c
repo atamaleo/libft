@@ -6,7 +6,7 @@
 /*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:59:15 by viniferr          #+#    #+#             */
-/*   Updated: 2023/10/27 07:11:02 by viniferr         ###   ########.fr       */
+/*   Updated: 2023/11/01 19:32:13 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	srclen = ft_strlen(src);
 	i = 0;
 	if (size == 0)
-		return (destlen);
-	while (size - 1 > 0)
+		return (srclen);
+	if (destlen > size)
+		return (srclen + size);
+	while (src[i] && destlen + i < size - 1)
 	{
-		dest[destlen + i] = *src;
+		dest[destlen + i] = src[i];
 		i++;
-		src++;
-		size--;
 	}
-	dest[i] = '\0';
+	dest[destlen + i] = '\0';
 	return (srclen + destlen);
 }

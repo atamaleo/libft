@@ -28,6 +28,7 @@ SRCS		=	ft_atoi.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
 				ft_strtrim.c \
+				ft_split.c \
 				ft_substr.c \
 				ft_tolower.c \
 				ft_toupper.c \
@@ -53,3 +54,7 @@ fclean:	clean
 		rm -rf $(NAME)
 
 re:	fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
