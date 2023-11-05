@@ -6,11 +6,21 @@
 /*   By: viniferr <viniferr@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:51:08 by viniferr          #+#    #+#             */
-/*   Updated: 2023/11/03 21:50:16 by viniferr         ###   ########.fr       */
+/*   Updated: 2023/11/05 15:44:20 by viniferr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	free_split(char **arr, size_t j)
+{
+	while (j > 0)
+	{
+		free(arr[j]);
+		j--;
+	}
+	free(arr);
+}
 
 static size_t	word_len (const char *s, char c)
 {
@@ -32,39 +42,55 @@ static size_t	count_words(const char *s, char c)
 	while (s[j])
 	{
 		if (s[j] != c)
+		{
 			i++;
+			while (s[j] && s[j] != c)
+				j++;
+		}
 		else
 			j++;
 	}
 	return (i);
 }
 
-char	*words (char const *s, char c)
+static char	**words (char const *s, char c, char **arr)
 {
-	int		i;
-	int		j;
-	char	*word;
-
-	i = 0;
-	word = (char *)malloc(word_len(s + i, c)* sizeof(char));
-	
-}
-char	**ft_split(char const *s, char c)
-{
-	int		i;
-	int		j;
-	int		k;
-	char	**arr;
-
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	size_t	word;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	arr = (char **)malloc(ft_strlen(s) + 1);
-	if (!arr)
-		return (NULL);
 	while (s[i])
 	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+		{
+			word = word_len(s + i, c);
+			arr[j] = (char *)malloc((word + 1) * sizeof(char));
+			if (!arr[j])
+				free_split(arr, j);
+			k = 0;
+			while (k < word)
+				arr[j][k++] = s[i++];
+			arr[j++][word] = '\0';
+		}
 	}
+	arr[j] = NULL;
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (0);
+	arr = (char **)malloc((count_words(s, c) + 1) * sizeof(*arr));
+	if (!arr)
+		return (NULL);
+	words(s, c, arr);
 	return (arr);
 }
